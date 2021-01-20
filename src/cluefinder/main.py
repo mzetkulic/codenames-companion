@@ -8,8 +8,8 @@ def main():
     print("Hello World")
     print(path.parents[2])
     model = cluefinder.get_model(path.parents[2] / 'data' / 'GoogleNews-vectors-negative300.bin')
-    positives = ['Earth','Moon']
-    negatives = ['planet']
+    positives = ['politics','democrat']
+    negatives = ['republican']
     clues = model.most_similar(positive = positives, negative = negatives, restrict_vocab=50000,topn=20)
     print(clues)
     print(type(clues))
